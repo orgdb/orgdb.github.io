@@ -11,4 +11,4 @@ Anyone can make an OrgDb R package with [AnnotationForge,](http://bioconductor.o
 
 So here is an afford to make it available through this channel, which can be easily downloaded with `remotes::install_github("orgdb/org_pkg_name")`
 
-For complete list of OrgDb packages available please check [here](/orgdb_list.html) 
+For complete list of OrgDb packages available please check [here](https://orgdb.github.io/orgdb_list.html) 
