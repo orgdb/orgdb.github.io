@@ -10,3 +10,5 @@ But for non-model organism we dont have a good resouce.
 Anyone can make an OrgDb R package with [AnnotationForge,](http://bioconductor.org/packages/release/bioc/html/AnnotationForge.html) but it require a downloaded NCBI database in background which is abount 12GB and yes sometime it takes a long time. 
 
 So here is an afford to make it available through this channel, which can be easily downloaded with `remotes::install_github("orgdb/org_pkg_name")`
+
+For complete list of OrgDb packages available please check [here](/orgdb_list.html) 
