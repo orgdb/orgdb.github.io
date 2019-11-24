@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	td, th {
+	  border: 1px solid #dddddd;
+	  text-align: left;
+	  padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
+
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+loadDoc();
+var html = '<table><tr><th>Org PKG Name</th><th>Description</th><th>Updated on</th></tr>';
+
+function myFunction(item, index) {
+
+  html +=   '<tr>'+
+		    	'<td>'+item.name+'</td>'+
+			    '<td>'+item.description+'</td>'+
+			    '<td>'+item.updated_at+'</td>'+
+			'</tr>';
+  document.getElementById("demo").innerHTML = html;
+}
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    	github = JSON.parse(this.responseText);
+    	github.forEach(myFunction);
+
+    	html = '</table>';
+    }
+  };
+  xhttp.open("GET", "https://api.github.com/users/orgdb/repos", true);
+  xhttp.send();
+}
+
+
+    
+</script>
+
+</body>
+</html>
